@@ -129,9 +129,9 @@ let watchList = [
 		Response: 'True',
 	},
 ];
+//Primero obtengo los objetos que cumplan las condiciones y con el map obtengo los nombres
+const returnMovieTitle = (watchList) => watchList.filter((movie) => movie.Director == "Christopher Nolan" && parseFloat(movie.imdbRating) > 8.0).map((movie) => movie.Title); 
 
-const returnMovieTitle = (watchList) => watchList.filter((movie) => movie.Director == "Christopher Nolan" && parseFloat(movie.imdbRating) > 8.0).map((movie) => movie.Title);
-    
 
 const titlesArray = returnMovieTitle(watchList);
 console.log(titlesArray);
