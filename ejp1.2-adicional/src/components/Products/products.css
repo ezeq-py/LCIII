@@ -1,0 +1,12 @@
+.card{
+    border: 2px solid black;
+    width: 180px;
+    height: 200px;
+    margin: 50px;
+    box-shadow: 21px 20px 0px -4px rgba(0,0,0,0.75);
+}
+
+.card-container{
+    display: flex;
+    
+}

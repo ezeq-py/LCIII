@@ -13,7 +13,7 @@ const countries = [
 
 const comparePopulation = (a, b) => b.population - a.population;
 
-const sortCountries = (array, sorting) => array.sort(sorting);
+const sortCountries = (array, sorting) => array.sort(sorting); //cualquiera, me podria ahorra una linea creo(?)
 
 const sortedCountries = sortCountries(countries, comparePopulation);
 

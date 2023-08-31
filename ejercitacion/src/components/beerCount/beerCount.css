@@ -1,0 +1,8 @@
+.count-container{
+    text-align: start;
+    padding-left: 2rem;
+}
+
+.count-container h3{
+    text-decoration: underline wavy black 2px;
+}
