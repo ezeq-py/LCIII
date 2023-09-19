@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import "./changeDollar.css"
 //pasamos la función por props y la ponemos en una función contenedora que va a ir en el evento onChange
@@ -14,11 +14,11 @@ const ChangeDollar = ({ setNewDollarHandler, setShowDollarHandler, showDollar })
     return (
         <div className='dolar-container'>
             <h1>Ejercicio 2.2</h1>
-            <button onClick={onClickSetShowDollar}>{showDollar ? "Ocultar" : "Mostrar"} componente</button>
+            <button className="button" onClick={onClickSetShowDollar}>{showDollar ? "Ocultar" : "Mostrar"} componente</button>
             <div className={`${toggleClass}`}>
                 <fieldset className="dolar">
                     <legend>Ejercicio 2.1</legend>
-                    <label for="change-dolar">
+                    <label htmlFor="change-dolar">
                         Ingrese el valor del dolar:
                         <input id="change-dolar" type='number' onChange={onChangeSetNewDollar} />
                     </label>

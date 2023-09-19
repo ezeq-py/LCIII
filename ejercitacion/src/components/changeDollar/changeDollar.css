@@ -6,15 +6,6 @@
     width: 300px;
 }
 
-.dolar-container button{
-    border: 2px solid black;
-    background-color: white;
-    width: 150px;
-    height: 50px;
-    margin: 1rem;
-    cursor:pointer;
-}
-
 .dolar-container {
     display: flex;
     flex-direction: column;

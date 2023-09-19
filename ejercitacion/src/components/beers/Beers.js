@@ -4,6 +4,7 @@ import BeerAvailable from '../beerAvailable/BeerAvailable';
 import BeerCount from '../beerCount/BeerCount';
 import BeerStyles from '../beerStyles/BeerStyles';
 import ChangeDollar from '../changeDollar/ChangeDollar';
+import NewBeer from '../newBeer/NewBeer';
 
 const Beers = () => {
     const beers = [
@@ -71,15 +72,21 @@ const Beers = () => {
             available: false,
         },
     ];
-    const beerStyles = beers.map((beer) => beer.beerStyle) //Guardo los estilos de cervezas repetidos en un array aparte que voy a pasar por parametros al componente "BeerStyles"
     const [newDollar, setNewDollar] = useState(731) //primero declaramos un state y le damos un valor inicial
     const [showDollar, setShowDollar] = useState(true)
+    const [beerUpdated, setBeerUpdated] = useState(beers)
+
+    const beerStyles = beerUpdated.map((beer) => beer.beerStyle) //Guardo los estilos de cervezas repetidos en un array aparte que voy a pasar por parametros al componente "BeerStyles"
 
     const setNewDollarHandler = (value) => {  //hacemos una función que contiene la función del useState que cambia el valor de la variable del state
         setNewDollar(value)
     }
     const setShowDollarHandler = (value) => {
         setShowDollar(value)
+    }
+    const setBeerUpdatedHandler = (value) => {
+        setBeerUpdated(value)
+        console.log(beerUpdated)
     }
 
     return (
@@ -89,9 +96,19 @@ const Beers = () => {
                 setShowDollarHandler={setShowDollarHandler}
                 showDollar={showDollar}
             />
-            <BeersList beers={beers} dolar={newDollar} />
-            <BeerAvailable beers={beers} />
-            <BeerCount beers={beers} dolar={newDollar} />
+            <NewBeer
+                setBeerUpdatedHandler={setBeerUpdatedHandler}
+                beerUpdated={beerUpdated}
+            />
+            <BeersList
+                beers={beerUpdated}
+                dolar={newDollar}
+            />
+            <BeerAvailable beers={beerUpdated} />
+            <BeerCount
+                beers={beerUpdated}
+                dolar={newDollar}
+            />
             <BeerStyles beerStyles={beerStyles} />
         </div>
     )

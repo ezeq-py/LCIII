@@ -1,0 +1,22 @@
+.capsule-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    width: 57%;
+}
+
+.capsule{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 10px;
+    border: 2px solid black;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+}
