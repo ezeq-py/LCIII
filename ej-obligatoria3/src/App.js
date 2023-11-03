@@ -6,6 +6,8 @@ import Login from './components/login/Login';
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom"
 import Protected from './components/protected/Protected';
 
+//https://es.react.dev/learn/updating-arrays-in-state
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
