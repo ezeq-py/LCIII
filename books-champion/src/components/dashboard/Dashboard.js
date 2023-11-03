@@ -50,7 +50,13 @@ const Dashboard = ({ onLogOut }) => {
 
     useEffect(() => {
         const booksStoraged = JSON.parse(localStorage.getItem("books"));
-        if (booksStoraged) setBooks(booksStoraged);
+        if (booksStoraged) {
+            const newBooksStoraged = booksStoraged.map((book) => {
+                return {...book, dateRead: new Date(book.dateRead)} //cuando traemos del lcs el objeto Date se rompe y hay que volver a armarlo(?)
+            })
+            setBooks(newBooksStoraged);
+        }
+        
     }, []) //toma como parametro una callback y las dependencias que va a visualizar, si hay un cambio en una de ellas se reevalua el componente
     //el array vacio indica que el useEffect se ejecutara solo una vez después del evaluado/renderizado del componente
 

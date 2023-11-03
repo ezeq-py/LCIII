@@ -9,13 +9,11 @@ const Books = ({ books }) => {
         setBooksFiltered(value);
     }
 
-    // const bookList = books.filter(book => book.dateRead.getFullYear().toString() === booksFiltered).map((book) => (<BookItem
-    //     title={book.title}
-    //     author={book.author}
-    //     dateRead={book.dateRead}
-    //     pageCount={book.pageCount} />))
-
-    const bookList = books.filter(book => book.dateRead.getFullYear())
+    const bookList = books.filter(book => book.dateRead.getFullYear().toString() === booksFiltered).map((book) => (<BookItem
+        title={book.title}
+        author={book.author}
+        dateRead={book.dateRead}
+        pageCount={book.pageCount} />))
 
 
     return (
